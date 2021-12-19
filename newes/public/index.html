@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ 
+</body>
+</html>
+<script>
+var b = {
+      "id": 1,
+      "name": "Pizza",
+      "price": 1,
+      "active": true
+    }
+
+b = JSON.stringify(b)
+
+    //    fetch('http://localhost:3000/api/products/', {
+    //   method: 'POST',
+    //   body: b,
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    // })
+    //   .then((resp) => {
+    //     return resp.json()
+    //   })
+    //   .then((res) => {
+    //     console.log(res)
+    //   })
+    //   .catch((err) => {
+    //     console.log(err)
+    //   })
+  
+ async function tr(){
+  var a = await fetch('http://localhost:3000/api/products/',{
+   method:'POST',
+   body:JSON.stringify({
+      "id": 219,
+      "name": "Pizza",
+      "price": 1000,
+      "active": true
+    }),
+    headers: {
+        'Content-Type': 'application/json',
+      },
+  })
+  let data =await a.json()
+  console.log(data);
+ }
+ tr()
+</script>
